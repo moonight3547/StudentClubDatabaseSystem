@@ -1,4 +1,8 @@
-# CSC3170 Project: Information Management System for Student Clubs
+# Project: Information Management System for Student Clubs
+
+## (An Implementation of CSC3170 Database Course Final Project with Flask & PyMySQL)
+
+Time Cost: 4 days from scratch ~
 
 ## Overview
 
@@ -28,36 +32,20 @@ This project is an information management system for student clubs, which allows
    - Register
  - [Admin] 
    - Create a new club
-   - Delete a club
-   - Publish announcement
+   - Delete a club (Not Implemented. Looks easy :P)
+   - Publish announcement (Not Implemented. Maybe can try another layout :P)
  - [ClubAdmin] 
+   - Update club description
    - Publish an event
    - Update an event
    - Compute statistics of students in events
-     - total number of student
-     - students from different grades
-     - students from different schools
-     - pairs of students with same interest
-   - Update club description
+   - Provide search function for students' information
  - [Student] 
    - Query profile
    - Query club membership
    - Query past events
    - Update profile
    - Join an event
-
-## Websites
- - "localhost:5000/": index page
- - "localhost:5000/login": login page
- - "localhost:5000/register": register page
- - "localhost:5000/clubs": page with a list of clubs
- - "localhost:5000/clubs/<club>": club page
- - "localhost:5000/clubs/<club>/<event>": event page under club
- - "localhost:5000/profile": profile page for user
-
-## Execution
- - First ... 
-
-    <div class = "layout" style = "text-align: right;">
-        <p id = "user">User: {{user}}</p>
-    </div>
+   - Join a club
+   ...
+ 
