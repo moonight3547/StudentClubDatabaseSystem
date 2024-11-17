@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - Club Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div id = "profile" class = "layout">
+        <p id = "note">{{note}}</p>
+        <form action = "" method = "GET">
+            <h2>Event Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Event Name: </td>
+                    <td> {{info.event}} </td>
+                </tr>
+                <tr>
+                    <td> Club Name: </td>
+                    <td> {{info.clubname}} </td>
+                </tr>
+                <tr>
+                    <td> Event Date: </td>
+                    <td> {{info.event_date}} </td>
+                </tr>
+                <tr>
+                    <td> Location: </td>
+                    <td> {{info.location}} </td>
+                </tr>
+                <tr>
+                    <td> Deadline to Join: </td>
+                    <td> {{info.join_ddl}} </td>
+                </tr>
+            </table>
+            <h2>Event Details</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Student Quota: </td>
+                    <td> {{info.lim_students}} </td>
+                </tr>
+                <tr>
+                    <td> Completed: </td>
+                    <td> {{info.completed}} </td>
+                </tr>
+                <tr>
+                    <td> Out of Campus: </td>
+                    <td> {{info.out_campus}} </td>
+                </tr>
+                <tr>
+                    <td> Transportation Support: </td>
+                    <td> {{info.transportation}} </td>
+                </tr>
+                <tr>
+                    <td> Event Type: </td>
+                    <td> {{info.type}} </td>
+                </tr>
+                <tr>
+                    <td> Event Information: </td>
+                    <td> {{info.event_info}} </td>
+                </tr>
+                <tr>
+                    <td> Event Description: </td>
+                    <td> {{info.event_desc}} </td>
+                </tr>
+            </table>
+        </form>
+        <form action = "{{url_for("event_join", club = club, eventid=eventid, user_name = user)}}">
+            <div class = "button-container" style = "text-align: center;">
+                <button class = "button">Join Event</button>
+            </div>
+        </form>
+    </div>
+     <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("clubs")}}" style = "display: inline-block;">
+                <button class = "button">All Clubs</button>
+            </form>
+            <form action = "{{url_for("events")}}" style = "display: inline-block;">
+                <button class = "button">All Events</button>
+            </form>
+            <form action = "{{url_for("profile", user_name=user)}}" style = "display: inline-block;">
+                <button class = "button">User Profile</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

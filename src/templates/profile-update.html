@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - User Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div id = "profile" class = "layout">
+        <form action = "{{url_for("profile_complete", user_name = user)}}" method="POST">
+            <h2>Account Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.passwd}} id="passwd" name="passwd" required minlength="8" maxlength="20"/>
+                    </td>
+                </tr>
+            </table>
+            <h2>Student Profile</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Gender">Gender:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.gender}} id="gender" name="gender" minlength="0" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Affilication">Affilication:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.afflication}} id="afflication" name="affilication" required minlength="0" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Student ID">Student ID:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.stuid}} id="stuid" name="stuid" required minlength="0" maxlength="20"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Grade">Grade:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.grade}} id="grade" name="grade" minlength="0" maxlength="4"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="School">School:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.school}} id="school" name="school" minlength="0" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Major">Major:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.major}} id="major" name="major" minlength="0" maxlength="20"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Interest">Interest:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.interest}} id="interest" name="interest" minlength="0" maxlength="20"/>
+                    </td>
+                </tr>
+            </table>
+            <h2>Student Contact</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Email">Email:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.email}} id="email" name="email" required minlength="0" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Phone">Phone:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.phone}} id="phone" name="phone" required minlength="0" maxlength="20"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="WeChat">WeChat:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.wechat}} id="wechat" name="wechat" minlength="0" maxlength="20"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Address">Address:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.address}} id="address" name="address" minlength="0" maxlength="100"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Postal Code">postal:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.postal}} id="postal" name="postal" minlength="0" maxlength="10"/>
+                    </td>
+                </tr>
+            </table>
+            <div class = "button-container" style = "text-align: center;">
+                <button class = "button">Complete Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

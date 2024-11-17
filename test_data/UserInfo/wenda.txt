@@ -1,0 +1,14 @@
+"username": wenda
+"passwd": Lwenda
+"gender": Male
+"affilication": CUHKSZ
+"stuid": 121090323
+"grade": 2021
+"school": CUHKSZ
+"major": Applied Math
+"interest": Gaming
+"email": 121090323@cusz.edu.cn
+"phone": -
+"wechat": reverse1999
+"address": CUHKSZ Shaw College
+"postal": 518172

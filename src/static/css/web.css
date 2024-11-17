@@ -1,0 +1,112 @@
+#title {
+    text-align: center;
+    color: aquamarine;
+    font-size: 2rem;
+}
+#subtitle {
+    text-align: center;
+    color: #55DD99;
+    font-size: 1.5rem;
+}
+#profile {
+    color: #008CFF;
+    font-size: 1.5rem;
+}
+#user {
+    text-align: right;
+    color: violet;
+    font-size: 1rem;
+}
+#note {
+    text-align: center; 
+    color: darkviolet; 
+}
+.layout {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.layout2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: -10%;
+    margin-right: -10%;
+}
+.button {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: #008CBA;
+    color: lightcyan;
+    border: 2px solid #008CFF;
+    border-radius: 20px;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button:hover {
+    background-color: #008CFF;
+    color:darkcyan;
+}
+.button-container {
+    display: inline-block;
+}
+.button-container form{
+    margin: 1rem 0;
+}
+label {
+    display: inline-block;
+    color: #00DDFF;
+    text-emphasis: bold;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+input {
+    background-color:transparent;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 2px solid #008CFF;
+    color: #00EEFF;
+}
+input,label {
+    margin: 0.5rem 0;
+}
+.profile-table {
+    border: 2px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center
+    border-collapse: collapse;
+}
+.profile-table th {
+    border: 1px solid #008CFF;
+    padding: 0.5rem;
+    color: #00FFFF;
+    background-color: rgba(102,204,255,0.5);
+    fill-opacity: 0.5;
+    margin: 1rem 0;
+    border: 2px solid #008CFF;
+    border-radius: 20px;
+    padding: 10px 50px;
+    box-shadow: 2px 2px 2px #008CBA;
+}
+.profile-table td {
+    border: 1px solid #008CFF;
+    padding: 0.5rem;
+    color: #00EEFF;
+    background-color: rgba(102,204,255,0.5);
+    fill-opacity: 0.5;
+    margin: 1rem 0;
+    border: 2px solid #008CFF;
+    border-radius: 20px;
+    padding: 10px 50px;
+    box-shadow: 2px 2px 2px #008CBA;
+}
+
+a:link {color: #FF0066;}      /* unvisited link */
+a:visited {color: #66CCFF;}  /* visited link */
+a:hover {color: #3333FF;}  /* mouse on link */
+a:active {color: #33CC66;}  /* mouse click */

@@ -1,0 +1,6 @@
+#* Conda 4.11.0
+#* MySQL 9.0.1
+#* python 3.10
+PyMySQL #* PyMySQL 1.1.1
+Flask #* Flask 3.0.3
+cryptography

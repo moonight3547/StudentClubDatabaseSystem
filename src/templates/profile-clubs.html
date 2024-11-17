@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - User Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div id = "profile" class = "layout2">
+        <h2> User Registered Clubs </h2>
+        <form action = "" method = "GET">
+            <table class = "profile-table">
+                <tr>
+                    <td> Student Club </td>
+                    <td> # of Students </td>
+                    <td> Type </td>
+                    <td> Field </td>
+                    <td> Portal </td>
+                </tr>
+                {% for c in clubs %}
+                <tr>
+                    <form action = "{{url_for("club", club = c.club)}}" style = "display: inline-block;">
+                        <td> {{c.clubname}} </td>
+                        <td> {{c.num_students}} </td>
+                        <td> {{c.type}} </td>
+                        <td> {{c.field}} </td>
+                        <td> <button class="button">{{c.clubname}}</button> </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </table>
+        </form>
+    </div>
+    <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("clubs")}}" style = "display: inline-block;">
+                <button class = "button">All Clubs</button>
+            </form>
+            <form action = "{{url_for("profile_events", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">My Events</button>
+            </form>
+            <form action = "{{url_for("profile", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">User Profile</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+"username": yuanxu
+"passwd": 12345678
+"gender": Male
+"affilication": CUHKSZ
+"stuid": 121090658
+"grade": 2021
+"school": CUHKSZ
+"major": Computer Science
+"interest": Programming
+"email": 121090658@cusz.edu.cn
+"phone": 19850713547
+"wechat": wechatyuanxu
+"address": CUHKSZ Shaw College
+"postal": 518172

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - User Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div id = "profile" class = "layout">
+        <form action = "" method = "GET">
+            <h2>Account Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Username: </td>
+                    <td> {{user}} </td>
+                </tr>
+                <tr>
+                    <td> Password: </td>
+                    <td> {{info.passwd}} </td>
+                </tr>
+                <tr>
+                    <td> Register Date: </td>
+                    <td> {{info.regdate}} </td>
+                </tr>
+            </table>
+            <h2>Student Profile</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Gender: </td>
+                    <td> {{info.gender}} </td>
+                </tr>
+                <tr>
+                    <td> Affilication: </td>
+                    <td> {{info.affilication}} </td>
+                </tr>
+                <tr>
+                    <td> Student ID: </td>
+                    <td> {{info.stuid}} </td>
+                </tr>
+                <tr>
+                    <td> Grade: </td>
+                    <td> {{info.grade}} </td>
+                </tr>
+                <tr>
+                    <td> School: </td>
+                    <td> {{info.school}} </td>
+                </tr>
+                <tr>
+                    <td> Major: </td>
+                    <td> {{info.major}} </td>
+                </tr>
+                <tr>
+                    <td> Interest: </td>
+                    <td> {{info.interest}} </td>
+                </tr>
+            </table>
+            <h2>Student Contact</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Email: </td>
+                    <td> {{info.email}} </td>
+                </tr>
+                <tr>
+                    <td> Phone: </td>
+                    <td> {{info.phone}} </td>
+                </tr>   
+                <tr>
+                    <td> WeChat: </td>
+                    <td> {{info.wechat}} </td>
+                </tr>   
+                <tr>
+                    <td> Address: </td>
+                    <td> {{info.address}} </td>
+                </tr>   
+                <tr>
+                    <td> Postal Code: </td>
+                    <td> {{info.postal}} </td>
+                </tr>   
+            </table>
+        </form>
+    </div>
+    <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("profile_clubs", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Membership</button>
+            </form>
+            <form action = "{{url_for("profile_events", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">Scheduled Events</button>
+            </form>
+            <form action = "{{url_for("profile_update", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">Update Profile</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

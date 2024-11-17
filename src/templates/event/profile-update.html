@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - Club Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div id = "profile" class = "layout">
+        <form action = "{{url_for("event_profile_complete", club = user, eventid=eventid)}}" method="POST">
+            <h2>Event Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Event Name">Event Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.event}} id="event" name="event" minlength="1" maxlength="50"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Event Date">Event Date:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.event_date}} id="event_date" name="event_date" minlength="1" maxlength="20"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Location">Location:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.location}} id="location" name="location" minlength="1" maxlength="100"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Deadline to Join">Deadline to Join:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.join_ddl}} id="join_ddl" name="join_ddl" minlength="1" maxlength="20"/>
+                    </td>
+                </tr>
+            </table>
+            <h2>Event Details</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Student Quota">Student Quota:</label>
+                    </td>
+                    <td>
+                        <input type="number" placeholder={{info.lim_students}} step="1" id="lim_students" name="lim_students" min="0" max="2000"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Completed">Completed:</label>
+                    </td>
+                    <td>
+                        <input type="number" step="1" placeholder={{info.completed}} step="1" id="completed" name="completed" min="0" max="1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Out of Campus">Out of Campus:</label>
+                    </td>
+                    <td>
+                        <input type="number" step="1" placeholder={{info.out_campus}} id="out_campus" name="out_campus" min="0" max="1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Transportation Support">Transportation Support:</label>
+                    </td>
+                    <td>
+                        <input type="number" step="1" placeholder={{info.transportation}} id="transportation" name="transportation" min="0" max="1"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Event Type">Event Type:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.type}} id="type" name="type" minlength="1" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Event Information">Event Information:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.event_info}} id="event_info" name="event_info" minlength="1" maxlength="100"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Event Description">Event Description:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.event_desc}} id="event_desc" name="event_desc" minlength="1" maxlength="1000"/>
+                    </td>
+                </tr>
+            </table>
+            <h2>Secured Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Budget">Budget:</label>
+                    </td>
+                    <td>
+                        <input type="number" step="1" placeholder={{info.budget}} id="budget" name="budget" min="0" max="20000"/>
+                    </td>
+                </tr>
+            </table>
+            <div class = "button-container" style = "text-align: center;">
+                <button class = "button">Complete Update</button>
+            </div>
+        </form>
+    </div>
+     <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("club_profile_students", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Students</button>
+            </form>
+            <form action = "{{url_for("club_profile_events", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Events</button>
+            </form>
+            <form action = "{{url_for("event_profile", club = user, eventid = eventid)}}" style = "display: inline-block;">
+                <button class = "button">Home</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - Club List</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div id = "profile" class = "layout2" style="font-size:1rem;">
+        <h2> Student - Club - Event Statistics </h2>
+        <table class = "profile-table">
+            <tr>
+                <td> Student </td>
+                <td> Major </td>
+                <td> Club </td>
+                <td> Event </td>
+                <td> Date </td>
+                <td> Location </td>
+            </tr>
+            {% for q in q1 %}
+            <tr>
+                <td> {{q.student}} </td>
+                <td> {{q.major}} </td>
+                <td> {{q.clubname}} </td>
+                <td> {{q.eventt}} </td>
+                <td> {{q.event_date}} </td>
+                <td> {{q.location}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table class = "profile-table">
+            <tr>
+                <td> Student </td>
+                <td> Major </td>
+                <td> Interest </td>
+                <td> Student Information </td>
+            </tr>
+            {% for q in q2 %}
+            <tr>
+                <td> {{q.username}} </td>
+                <td> {{q.major}} </td>
+                <td> {{q.interest}} </td>
+                <td> 
+                    <button onclick="promptInfo()" class = "button" id = "search" style="display:inline-block"> search: </button> 
+                    <p id = "prompt" style="display:inline-block"></p> 
+                    <script>
+                        function promptInfo() {
+                            var input=prompt("Search for the student's\nEmail(e)/Phone(p)/WeChat(w)/Address(a)/StudentID(s)/School(t)/Grade(g)/Registration Time(r)/Gender(o):");
+                            if (input == 'e' || input == 'E') {
+                                document.getElementById("prompt").innerHTML="Email: {{q.email}}";
+                            } else if (input == 'p' || input == 'P') {
+                                document.getElementById("prompt").innerHTML="Phone Number: {{q.phone}}";
+                            } else if (input == 'w' || input == 'W') {
+                                document.getElementById("prompt").innerHTML="WeChat Account: {{q.wechat}}";
+                            } else if (input == 'a' || input == 'A') {
+                                document.getElementById("prompt").innerHTML="Address: {{q.address}} Postal: {{q.postal}}";
+                            } else if (input == 's' || input == 'S') {
+                                document.getElementById("prompt").innerHTML="Student ID: {{q.stuid}}";
+                            } else if (input == 't' || input == 'T') {
+                                document.getElementById("prompt").innerHTML="School: {{q.affilication}} {{q.school}}";
+                            } else if (input == 'g' || input == 'G') {
+                                document.getElementById("prompt").innerHTML="WeChat Account: {{q.grade}}";
+                            } else if (input == 'r' || input == 'R') {
+                                document.getElementById("prompt").innerHTML="Registration Time: {{q.regdate}}";
+                            } else if (input == 'o' || input == 'O') {
+                                document.getElementById("prompt").innerHTML="Gender: {{q.gender}}";
+                            } 
+                        }
+                    </script>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("club_profile", club=user)}}" style = "display: inline-block;">
+                <button class = "button">Club Profile</button>
+            </form>
+            <form action = "{{url_for("club_profile_events", club=user)}}" style = "display: inline-block;">
+                <button class = "button">Club Events</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

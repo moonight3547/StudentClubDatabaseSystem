@@ -1,0 +1,14 @@
+"username": leaf
+"passwd": feaLeaf
+"gender": Female
+"affilication": CUHKSZ
+"stuid": 121090116
+"grade": 2021
+"school": CUHKSZ
+"major": Finance Tech
+"interest": Gaming
+"email": 121090116@link.cuhk.edu.cn
+"phone": -
+"wechat": hongkai-starrail
+"address": CUHKSZ Shaw College
+"postal": 518172

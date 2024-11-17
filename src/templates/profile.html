@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - User Profile</h1>
+    <h2 id = "profile" class = "layout"> Welcome, {{user}}! </h2>
+    <div class = "layout">
+        <p id = "webintro">
+            Welcome to visit the Student Club Database System of {{school}}. 
+            On this website, we provide services for {{school}} students to have review on materials of past events of student clubs. 
+            Besides, students can also apply to join a student club or register on the coming events if they have interests in them. 
+        </p>
+        <p id = "note">{{note}}</p>
+    </div>
+    <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("clubs")}}" style = "display: inline-block;">
+                <button class = "button">All Clubs</button>
+            </form>
+            <form action = "{{url_for("profile_display", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">Display Profile</button>
+            </form>
+            <form action = "{{url_for("profile_update", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">Update Profile</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

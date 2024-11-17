@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title"> Student Club Database System - Create Club </h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div class = "layout">
+        <p id = "webintro">
+            Welcome back, our administrator {{user}}!
+            You have priority to create and remove club administrator accounts.
+            You can also help them manage the student clubs and events. 
+        </p>
+    </div>
+    <div class = "layout" style = "text-align: right;">
+        <form action = "{{url_for("club_creation_complete")}}" method="POST">
+            <div class = "input-container">
+                <label for="Username">Username (1 to 20 characters):</label>
+                <input type="text" id="username" name="username" required minlength="1" maxlength="20"/>
+            </div>
+            <div class = "input-container">
+                <label for="Clubname">Clubname (1 to 30 characters):</label>
+                <input type="text" id="clubname" name="clubname" required minlength="1" maxlength="30"/>
+            </div>
+            <div class = "input-container">
+                <label for="Password">Password (8 to 20 characters):</label>
+                <input type="text" id="passwd" name="passwd" required minlength="8" maxlength="20"/>
+            </div>
+            <div class = "button-container" style = "text-align: center;">
+                <button class = "button">Complete Creation</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

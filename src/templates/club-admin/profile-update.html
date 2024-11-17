@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - Club Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}, Club: {{club_name}}</p>
+    </div>
+    <div id = "profile" class = "layout">
+        <form action = "{{url_for("club_profile_complete", club = user)}}" method="POST">
+            <h2>Account Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Club Name">Club Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.clubname}} id="clubname" name="clubname" minlength="1" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Password">Password:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.passwd}} id="passwd" name="passwd" required minlength="8" maxlength="20"/>
+                    </td>
+                </tr>
+            </table>
+            <h2>Club Profile</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Affilication">Affilication:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.affilication}} id="affilication" name="affilication" required minlength="1" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="School">School:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.school}} id="school" name="school" minlength="1" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Club Type">Club Type:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.type}} id="type" name="type" minlength="1" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Club Field">Club Field:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.field}} id="field" name="field" minlength="1" maxlength="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Club Information">Club Information:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.club_info}} id="club_info" name="club_info" minlength="1" maxlength="100"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Club Description">Club Description:</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder={{info.club_desc}} id="club_desc" name="club_desc" minlength="1" maxlength="1000"/>
+                    </td>
+                </tr>
+            </table>
+            <h2>Secured Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td>
+                        <label for="Annual Budget">Annual Budget:</label>
+                    </td>
+                    <td>
+                        <input type=number step = 1 placeholder={{info.annual_budget}} id="annual_budget" name="annual_budget" min=0 max = 1000000 />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Last Year Expense">Last Year Expense:</label>
+                    </td>
+                    <td>
+                        <input type=number step = 0.01 placeholder={{info.last_year_expense}} id="last_year_expense" name="last_year_expense" min = 0 max = 1000000/>
+                    </td>
+                </tr> 
+            </table>
+            <div class = "button-container" style = "text-align: center;">
+                <button class = "button">Complete Update</button>
+            </div>
+        </form>
+    </div>
+     <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("club_profile_students", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Students</button>
+            </form>
+            <form action = "{{url_for("club_profile_events", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Events</button>
+            </form>
+            <form action = "{{url_for("club_profile", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Home</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

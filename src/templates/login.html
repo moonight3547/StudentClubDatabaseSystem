@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>Login - {{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} Student Club Database System - Login</h1>
+    <div class = "layout">
+        <p id = "webintro">
+            Welcome to visit the Student Club Database System of {{school}}. 
+            On this website, we provide services for {{school}} students to have review on materials of past events of student clubs. 
+            Besides, students can also apply to join a student club or register on the coming events if they have interests in them. 
+        </p>
+    </div>
+    <div class = "layout" style = "text-align: right;">
+        <form action = "{{url_for("login_enter")}}" method="POST">
+            <div class = "input-container">
+                <label for="Username">Username (1 to 20 characters):</label>
+                <input type="text" id="username" name="username" required minlength="1" maxlength="20"/>
+            </div>
+            <div class = "input-container">
+                <label for="Password">Password (8 to 20 characters):</label>
+                <input type="text" id="passwd" name="passwd" required minlength="8" maxlength="20"/>
+            </div>
+            <div class = "button-container" style = "text-align: center;">
+                    <button class = "button">Enter</button>
+            </div>
+            <p id = "note">{{note}}</p>
+        </form>
+    </div>
+</body>
+
+</html>

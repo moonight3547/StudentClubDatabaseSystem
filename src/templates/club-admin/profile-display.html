@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - Club Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div id = "profile" class = "layout2">
+        <form action = "" method = "GET">
+            <h2>Account Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Username: </td>
+                    <td> {{user}} </td>
+                </tr>
+                <tr>
+                    <td> Club Name: </td>
+                    <td> {{club_name}} </td>
+                </tr>
+                <tr>
+                    <td> Password: </td>
+                    <td> {{info.passwd}} </td>
+                </tr>
+                <tr>
+                    <td> Priority: </td>
+                    <td> {{info.priority}} </td>
+                </tr>
+                <tr>
+                    <td> Club Id: </td>
+                    <td> {{info.clubid}} </td>
+                </tr>
+                <tr>
+                    <td> Register Date: </td>
+                    <td> {{info.regdate}} </td>
+                </tr>
+            </table>
+            <h2>Club Profile</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Affilication: </td>
+                    <td> {{info.affilication}} </td>
+                </tr>
+                <tr>
+                    <td> School: </td>
+                    <td> {{info.school}} </td>
+                </tr>
+                <tr>
+                    <td> Number of Students: </td>
+                    <td> {{info.num_students}} </td>
+                </tr>
+                <tr>
+                    <td> Number of Events: </td>
+                    <td> {{info.num_events}} </td>
+                </tr>
+                <tr>
+                    <td> Club Type: </td>
+                    <td> {{info.type}} </td>
+                </tr>
+                <tr>
+                    <td> Club Field: </td>
+                    <td> {{info.field}} </td>
+                </tr>
+                <tr>
+                    <td> Club Information: </td>
+                    <td> {{info.club_info}}</td>
+                </tr>
+                <tr>
+                    <td> Club Description: </td>
+                    <td> {{info.club_desc}}</td>
+                </tr>
+            </table>
+            <h2>Secured Information</h2>
+            <table class = "profile-table">
+                <tr>
+                    <td> Annual Budget: </td>
+                    <td> {{info.annual_budget}} </td>
+                </tr>
+                <tr>
+                    <td> Last Year Expense: </td>
+                    <td> {{info.last_year_expense}} </td>
+                </tr>   
+            </table>
+        </form>
+    </div>
+     <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("club_profile_students", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Students</button>
+            </form>
+            <form action = "{{url_for("club_profile_events", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Events</button>
+            </form>
+            <form action = "{{url_for("club_profile", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Home</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

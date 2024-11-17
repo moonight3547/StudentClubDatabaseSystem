@@ -1,0 +1,14 @@
+"username": JunT
+"passwd": JunTJunT
+"gender": Male
+"affilication": CUHKSZ
+"stuid": 121090404
+"grade": 2021
+"school": CUHKSZ
+"major": Data Science
+"interest": Programming
+"email": 121090404@cusz.edu.cn
+"phone": -
+"wechat": -
+"address": CUHKSZ Shaw College
+"postal": 518172

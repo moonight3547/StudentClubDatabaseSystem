@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title">Student Club Database System - Club Profile</h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div class = "layout">
+        <h2 id = "profile" class = "layout"> Welcome back, our club admin for {{club_name}}! </h2>
+        <p id = "webintro">
+            Welcome back, our administrator {{user}} of the student club {{club_name}}!
+            You have priority to create a new event for students to join in. 
+            You can also manage information of the student club and its events. 
+        </p>
+        <h2 style = "color:#ff00e6; text-align: center; font-size: 1.2rem;">Good Luck & Have Fun!!!</h2>
+        <h2 id = "subtitle"> Introduction to {{club_name}} </h2>
+        <p id = "webintro">
+            {{club_desc}}
+        </p>
+        <h2 id = "subtitle"> Introduction to {{event_name}} </h2>
+        <p id = "webintro">
+            {{event_desc}}
+        </p>
+    </div>
+    <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("club_profile", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Profile</button>
+            </form>
+            <form action = "{{url_for("club_profile_events", club = user)}}" style = "display: inline-block;">
+                <button class = "button">Club Events</button>
+            </form>
+            <form action = "{{url_for("event_profile_display", club = user, eventid=eventid)}}" style = "display: inline-block;">
+                <button class = "button">Display Profile</button>
+            </form>
+            <form action = "{{url_for("event_profile_update", club = user, eventid=eventid)}}" style = "display: inline-block;">
+                <button class = "button">Update Profile</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

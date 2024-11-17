@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title"> Student Club Database System - Admin Page </h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div class = "layout">
+        <p id = "webintro">
+            Welcome back, our administrator {{user}}!
+            You have priority to create and remove club administrator accounts.
+            You can also help them manage the student clubs and events. 
+        </p>
+    </div>
+    <div class = "layout">
+        <div class = "button-container">
+            <form action = "{{url_for("clubs", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">All Clubs</button>
+            </form>
+            <form action = "{{url_for("admin_create_club", user_name = user)}}" style = "display: inline-block;">
+                <button class = "button">Create Club</button>
+            </form>
+            <form action = "{{url_for("logout")}}" style = "display: inline-block;">
+                <button class = "button">Logout</button>
+            </form>
+        </div>
+        <p id = "note">{{note}}</p>
+    </div>
+</body>
+
+</html>

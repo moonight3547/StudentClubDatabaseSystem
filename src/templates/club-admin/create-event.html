@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>{{school}} Student Club Database System</title> 
+    <link rel="stylesheet" type="text/css" href={{url_for('static',filename='css/web.css')}}>
+    <style>
+        body {
+            background-size:cover;
+            background-image:url({{url_for("static",filename="imgs/background-img.jpg")}});
+            background-repeat:repeat-y;
+        }
+        #webintro {
+            text-align: left;
+            color: palevioletred;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id = "title"> {{school}} </h1>
+    <h1 id = "title"> Student Club Database System - Create Event </h1>
+    <div class = "layout" style = "text-align: right;">
+        <p id = "user">User: {{user}}</p>
+    </div>
+    <div class = "layout">
+        <p id = "webintro">
+            Welcome back, our administrator {{user}} of the student club {{club_name}}!
+            You have priority to create a new event for students to join in. 
+            You can also manage information of the student club and its events. 
+        </p>
+        <h2 style = "color:#ff00e6; text-align: center; font-size: 1.2rem;">Good Luck & Have Fun!!!</h2>
+    </div>
+    <div class = "layout" style = "text-align: right;">
+        <form action = "{{url_for("event_creation_complete", club = user)}}" method="POST">
+            <div class = "input-container">
+                <label for="Event Name">Event Name:</label>
+                <input type="text" id="event" name="event" required minlength="1" maxlength="50"/>
+            </div>
+            <div class = "input-container">
+                <label for="Event Date">Event Date:</label>
+                <input type="text" id="event_date" name="event_date" required minlength="1" maxlength="20"/>
+            </div>
+            <div class = "input-container">
+                <label for="Location">Location:</label>
+                <input type="text" id="location" name="location" minlength="1" maxlength="100"/>
+            </div>
+            <div class = "input-container">
+                <label for="Event Type">Event Type:</label>
+                <input type="text" id="type" name="type" required minlength="1" maxlength="30"/>
+            </div>
+            <div class = "input-container">
+                <label for="Deadline to Join">Deadline to Join:</label>
+                <input type="text" id="join_ddl" name="join_ddl" minlength="1" maxlength="20"/>
+            </div>
+            <div class = "input-container">
+                <label for="Student Quota">Student Quota:</label>
+                <input type="number" step="1" id="lim_students" name="lim_students" required min="0" max="2000"/>
+            </div>
+            <div class = "input-container">
+                <label for="Out of Campus">Out of Campus:</label>
+                <input type="number" step="1" id="out_campus" name="out_campus" required min="0" max="1"/>
+            </div>
+            <div class = "input-container">
+                <label for="Provide Transportation">Provide Transportation:</label>
+                <input type="number" step="1" id="transportation" name="transportation" required min="0" max="1"/>
+            </div>
+            <div class = "input-container">
+                <label for="Budget">Budget:</label>
+                <input type="number" step="1" id="budget" name="budget" required min="0" max="20000"/>
+            </div>
+            <div class = "button-container" style = "text-align: center;">
+                <button class = "button">Complete Creation</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
